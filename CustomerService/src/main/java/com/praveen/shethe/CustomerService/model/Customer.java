@@ -1,11 +1,9 @@
-package com.praveen.shethe.AdministratorSupport.model.customer;
-
-import com.praveen.shethe.AdministratorSupport.model.AbstractEntity;
+package com.praveen.shethe.CustomerService.model;
 
 /**
  * Created by Praveenkumar on 8/20/2020.
  */
-public class Customer extends AbstractEntity {
+public class Customer extends AbstractEntity{
 
     private String name;
 
