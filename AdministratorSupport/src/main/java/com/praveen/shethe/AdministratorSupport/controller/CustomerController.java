@@ -1,9 +1,9 @@
-package com.praveen.shethe.CustomerService.controller;
+package com.praveen.shethe.AdministratorSupport.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Praveenkumar on 8/19/2020.
+ * Created by Praveenkumar on 8/20/2020.
  */
 @RestController
 public class CustomerController {
