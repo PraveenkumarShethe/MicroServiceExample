@@ -34,9 +34,8 @@ public class AdminSupportWebapplicationConfiguration {
     @Bean
     public PropertySource yamlPropertySourceLoader() throws IOException {
         YamlPropertySourceLoader yamlPropertySourceLoader = new YamlPropertySourceLoader();
-        PropertySource propertySource = (PropertySource) yamlPropertySourceLoader.load("application.yml",
+        return (PropertySource) yamlPropertySourceLoader.load("application.yml",
                 new ClassPathResource("application.yml"));
-        return propertySource;
     }
 
     @Bean
