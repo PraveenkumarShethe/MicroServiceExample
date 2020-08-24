@@ -1,6 +1,7 @@
 package com.praveen.shethe.AdministratorSupport.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -10,6 +11,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -33,6 +35,13 @@ public class AdminSupportWebAppInitializer implements WebApplicationInitializer 
                 new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("*.html");
+    }
+
+    @Bean
+    public InternalResourceViewResolver getInternalResourceViewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/");
+        return resolver;
     }
 
     private AnnotationConfigWebApplicationContext getContext() {
