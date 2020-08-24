@@ -32,13 +32,6 @@ public class AdminSupportWebapplicationConfiguration {
     }
 
     @Bean
-    public PropertySource yamlPropertySourceLoader() throws IOException {
-        YamlPropertySourceLoader yamlPropertySourceLoader = new YamlPropertySourceLoader();
-        return (PropertySource) yamlPropertySourceLoader.load("application.yml",
-                new ClassPathResource("application.yml"));
-    }
-
-    @Bean
     public Filter characterEncodingFilter() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
