@@ -1,32 +1,49 @@
-plugins {
-	id 'org.springframework.boot' version '2.3.3.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-	id 'java'
+buildscript {
+	ext {
+		springBootVersion = '2.3.3.RELEASE'
+		jacksonDatabindVersion = '2.6.1'
+		springSecurityWebVersion = '4.1.1.RELEASE'
+		springxWebVersion = '4.1.1.RELEASE'
+		flywayCoreVersion = '4.0.3'
+		flywaySpringTestVersion = '4.0.1'
+
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE'
+		classpath("se.transmode.gradle:gradle-docker:1.2")
+	}
 }
-
-group = 'com.praveen.shethe'
+group = 'com.praveen.shethe.AdministratorSupport'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
+//sourceCompatibility = 1.11
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-amqp'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
+	complie("org.springframework.boot:spring-boot-starter-data-rest")
+	implementation("org.springframework.boot:spring-boot-starter-undertow")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-logging")
+	implementation("org.springframework.boot:spring-boot-starter-log4j2")
+	implementation("commons-validator:commons-validator:1.4.0")
+	implementation("org.springframework.security:spring-security-web:${springSecurityWebVersion}")
+	implementation("org.springframework.security:spring-security-acl:${springSecurityWebVersion}")
+	implementation("com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}")
+	implementation("com.fasterxml.jackson.core:jackson-core:2.7.5")
+	implementation("com.fasterxml.jackson.core:jackson-annotations:2.7.5")
+	implementation("org.hsqldb:hsqldb")
+	implementation("org.postgresql:postgresql:9.4-1204-jdbc42")
+	testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	testImplementation 'org.springframework.amqp:spring-rabbit-test'
 }
-
 test {
 	useJUnitPlatform()
 }
