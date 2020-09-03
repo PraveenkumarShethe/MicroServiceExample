@@ -18,14 +18,13 @@ buildscript {
 	}
 }
 group = 'com.praveen.shethe.AdministratorSupport'
-version = '0.0.1-SNAPSHOT'
-//sourceCompatibility = 1.11
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
-	complie("org.springframework.boot:spring-boot-starter-data-rest")
+	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 	implementation("org.springframework.boot:spring-boot-starter-undertow")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
