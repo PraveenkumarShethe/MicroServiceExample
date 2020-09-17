@@ -25,4 +25,11 @@ public class CustomerController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    @Transactional(Transactional.TxType.NEVER)
+    public void getAllCustomer(){
+
+    }
+
 }
