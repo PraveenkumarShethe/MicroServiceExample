@@ -1,4 +1,4 @@
-package com.praveen.shethe.ShoppingCart.controller;
+package com.example.SingleGateWayService.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Praveenkumar on 8/19/2020.
+ * Created by Praveenkumar on 9/19/2020.
  */
 @RestController
-@RequestMapping(value = "/shopping", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ShoppingController {
+@RequestMapping(value = "/gateway", produces = MediaType.APPLICATION_JSON_VALUE)
+public class GateWayController {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
