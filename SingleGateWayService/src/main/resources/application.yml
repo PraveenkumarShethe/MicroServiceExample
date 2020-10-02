@@ -7,10 +7,10 @@ spring:
 spring:
   profiles: common
 server:
-  contextPath: /admin
+  contextPath: /gateway
   port: 9000
 token :
-  secret : 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
+  secret : 9SyECk96oDsTmgdfFIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
 ---
 #Properties for the "local" profile, to be used by developers on their laptop
 spring:
