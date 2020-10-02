@@ -4,6 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -24,7 +25,8 @@ import javax.servlet.ServletRegistration;
 @ComponentScan(basePackages = "com.praveen.shethe.AdministratorSupport")
 @EnableJpaRepositories("com.praveen.shethe.AdministratorSupport.repository")
 @EnableWebMvc
-@ConfigurationProperties(value = "classpath:/application.yml")
+@PropertySource(value = "classpath:/application.yml")
+@ConfigurationProperties
 public class AdminSupportWebAppInitializer implements WebApplicationInitializer {
 
     @Override
