@@ -11,7 +11,4 @@ public class AdministratorSupportApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdministratorSupportApplication.class, args);
     }
-
-    public static void stop(){}
-
 }
