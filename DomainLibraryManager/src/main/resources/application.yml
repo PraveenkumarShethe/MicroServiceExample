@@ -25,7 +25,7 @@ spring:
     driverClassName: org.postgresql.Driver
     username: admin
     password: password
-    url: jdbc:postgresql://127.0.0.1:5432/adminsupport
+    url: jdbc:postgresql://127.0.0.1:5432/Microservice
 logging:
   file: SigleGateWayService.log
   level:
