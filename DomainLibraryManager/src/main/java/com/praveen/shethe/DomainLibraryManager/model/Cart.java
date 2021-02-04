@@ -15,7 +15,7 @@ public class Cart extends AbstractEntity {
     @Column(name = "cart_name")
     private String cartName;
 
-    @Column
+    @Column(name = "customer_id")
     @OneToOne
     private Customer customer;
 
