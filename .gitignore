@@ -4,4 +4,15 @@ bin
 /target/*
 .wtpmodules
 .settings
-GeneratedVersion.java
+
+/service-installer-suit/.idea/*
+*.project
+*.classpath
+bin
+/target/*
+.wtpmodules
+.settings
+service-installer-suit/service-installer-suit.iml
+service-installer-suit/.idea/compiler.xml
+service-installer-suit/.idea/jarRepositories.xml
+installer/installer/.idea/
