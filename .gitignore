@@ -16,3 +16,5 @@ service-installer-suit/service-installer-suit.iml
 service-installer-suit/.idea/compiler.xml
 service-installer-suit/.idea/jarRepositories.xml
 installer/installer/.idea/
+service-installer-suit/service-installer/service-installer.iml
+service-installer-suit/service-installer-panels/service-installer-panels.iml
