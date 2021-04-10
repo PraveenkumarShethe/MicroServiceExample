@@ -18,6 +18,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <staging.dir>${project.build.directory}/staging</staging.dir>
+        <installer.dir>${basedir}/src/main/installer</installer.dir>
         <izpack.version>5.0.6</izpack.version>
         <installer-output-filename>the-example-installer.jar</installer-output-filename>
         <maven.compiler.source>11</maven.compiler.source>
@@ -37,6 +38,7 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>service-installer-panels</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -48,6 +50,19 @@
                     <groupId>org.codehaus.izpack</groupId>
                     <artifactId>izpack-maven-plugin</artifactId>
                     <version>${izpack.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals><goal>izpack</goal></goals>
+                            <configuration>
+                                <!-- base for relative paths in izpack descriptor -->
+                                <baseDir>${staging.dir}</baseDir>
+                                <installFile>${installer.dir}/install.xml</installFile>
+                                <output>${project.build.directory}/${installer-output-filename}</output>
+                            </configuration>
+                        </execution>
+                    </executions>
+
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
